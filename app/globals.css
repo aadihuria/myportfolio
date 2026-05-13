@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-primary: #0D1117;
+  --color-bg-secondary: #161B22;
+  --color-bg-card: #1C2333;
+  --color-accent: #00E5FF;
+  --color-accent-dim: #38BDF8;
+  --color-text-primary: #E2E8F0;
+  --color-text-secondary: #94A3B8;
+  --color-border: #30363D;
+  --font-mono: "Space Mono", monospace;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+:root {
+  --bg-primary: #0D1117;
+  --bg-secondary: #161B22;
+  --bg-card: #1C2333;
+  --accent: #00E5FF;
+  --accent-dim: #38BDF8;
+  --text-primary: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --border: #30363D;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Dot matrix background */
+.dot-bg {
+  background-image: radial-gradient(rgba(0, 229, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Glow effect */
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.glow-border {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(28, 35, 51, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(48, 54, 61, 0.8);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+/* Section number style */
+.section-num {
+  font-family: "Space Mono", monospace;
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+/* Slide underline on hover */
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Timeline line */
+.timeline-line {
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+/* Skill badge */
+.skill-badge {
+  background: rgba(0, 229, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  color: var(--text-secondary);
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.skill-badge:hover {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: rgba(0, 229, 255, 0.5);
+  color: var(--accent);
+}
+
+/* Noise overlay for depth */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}

@@ -27,6 +27,7 @@ const projects = [
       "Full-stack campus app with study spot reviews, saved lists, user profiles, real-time messaging, friend requests, study groups, and a live leaderboard.",
     why: "Ann Arbor has great study spots but no good way to find them or coordinate with friends. I wanted something students would actually use — with real auth (email verification + Twilio SMS), real-time features, and a leaderboard to make it fun.",
     github: "https://github.com/aadihuria",
+    demo: "https://spotly8.vercel.app",
   },
   {
     name: "The Net Finder",
@@ -36,6 +37,7 @@ const projects = [
       "Real-time court availability tracker for 100+ tennis and pickleball courts across SE Michigan. Users submit occupancy data that reflects live on an interactive Mapbox map.",
     why: "I play tennis a lot around Ann Arbor and kept showing up to full courts. I built the tool I actually needed — with filters for surface type, lighting, and public/private, optimized for mobile so you can check it on the way there.",
     github: "https://github.com/aadihuria",
+    demo: null,
   },
   {
     name: "Black-Litterman Portfolio Optimization Model",
@@ -45,6 +47,7 @@ const projects = [
       "From-scratch Black-Litterman model with reverse optimization, Bayesian posterior updates, and mean-variance optimization. Backtested against market-cap and MVO benchmarks. Deployed as an interactive Streamlit dashboard.",
     why: "I was curious whether systematic Bayesian portfolio construction could actually beat naive allocation. This was my way of taking the theory from my Bayesian Data Analysis course and seeing if it held up on real data.",
     github: "https://github.com/aadihuria",
+    demo: null,
   },
 ];
 
@@ -74,15 +77,28 @@ export default function Projects() {
                     {project.name}
                   </h3>
                 </div>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 text-[#94A3B8] hover:text-[#00E5FF] transition-colors mt-0.5"
-                  aria-label="GitHub"
-                >
-                  <GithubIcon />
-                </a>
+                <div className="flex items-center gap-3 shrink-0 mt-0.5">
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 font-mono text-xs px-2.5 py-1 rounded border border-[#00E5FF]/30 text-[#00E5FF] bg-[#00E5FF]/5 hover:bg-[#00E5FF]/15 transition-colors duration-200"
+                    >
+                      <ExternalLinkIcon />
+                      Live Demo
+                    </a>
+                  )}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#94A3B8] hover:text-[#00E5FF] transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <GithubIcon />
+                  </a>
+                </div>
               </div>
 
               {/* Stack badges */}
@@ -134,6 +150,16 @@ function GithubIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
+    </svg>
+  );
+}
+
+function ExternalLinkIcon() {
+  return (
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
     </svg>
   );
 }

@@ -81,7 +81,7 @@ export default function About() {
         <FadeUp delay={0.45}>
           <p className="text-[#94A3B8] text-lg leading-relaxed">
             This summer he&apos;s heading to Seattle as an{" "}
-            <span className="text-[#E2E8F0] font-medium">Amazon SDE Intern</span> on
+            <span className="text-[#E2E8F0] font-medium">SDE Intern at Amazon</span> on
             the AI-Powered Ads team.
           </p>
         </FadeUp>

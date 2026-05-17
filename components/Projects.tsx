@@ -22,7 +22,7 @@ const projects = [
   {
     name: "Ann Arbor Study Spot & Tribe Finder",
     date: "March 2026",
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Supabase", "Pusher"],
+    stack: ["Next.js", "PostgreSQL", "Prisma", "NextAuth", "Twilio", "Pusher", "OpenAI API"],
     description:
       "Full-stack campus app with study spot reviews, saved lists, user profiles, real-time messaging, friend requests, study groups, and a live leaderboard.",
     why: "Ann Arbor has great study spots but no good way to find them or coordinate with friends. I wanted something students would use — with messaging, real-time features, and a leaderboard to make it fun.",
@@ -32,7 +32,7 @@ const projects = [
   {
     name: "The Net Finder",
     date: "December 2025",
-    stack: ["ReactJS", "PostgreSQL", "Mapbox GL JS"],
+    stack: ["Next.js", "Python", "PostgreSQL", "Mapbox GL JS", "scikit-learn"],
     description:
       "Real-time court availability tracker for 100+ tennis and pickleball courts across SE Michigan. Users submit occupancy data that reflects live on an interactive Mapbox map.",
     why: "I play tennis and pickleball a lot around SE Michigan and kept showing up to full courts. Built this for anyone who's had the same problem — real-time court availability with filters for surface type, lighting, and public/private, optimized for mobile so you can check it on the way there.",    github: "https://github.com/aadihuria",
@@ -41,7 +41,7 @@ const projects = [
   {
     name: "Black-Litterman Portfolio Optimization Model",
     date: "September 2025",
-    stack: ["Python", "cvxpy", "Streamlit"],
+    stack: ["Python", "cvxpy", "LangChain", "GPT-4o", "Streamlit"],
     description:
       "From-scratch Black-Litterman model with reverse optimization, Bayesian posterior updates, and mean-variance optimization. Backtested against market-cap and MVO benchmarks. Deployed as an interactive Streamlit dashboard.",
     why: "I was curious whether systematic Bayesian portfolio construction could actually beat naive allocation. This was my way of taking the theory from my Bayesian Data Analysis course and seeing if it held up on real data.",

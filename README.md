@@ -1,5 +1,7 @@
 # aadihuria.com
 
+Live at [aadihuria.vercel.app](https://aadihuria.vercel.app)
+
 Personal portfolio site — built with Next.js, Tailwind CSS, and Framer Motion.
 
 ## Stack

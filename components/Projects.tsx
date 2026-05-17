@@ -25,7 +25,7 @@ const projects = [
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Supabase", "Pusher"],
     description:
       "Full-stack campus app with study spot reviews, saved lists, user profiles, real-time messaging, friend requests, study groups, and a live leaderboard.",
-    why: "Ann Arbor has great study spots but no good way to find them or coordinate with friends. I wanted something students would actually use — with real auth (email verification + Twilio SMS), real-time features, and a leaderboard to make it fun.",
+    why: "Ann Arbor has great study spots but no good way to find them or coordinate with friends. I wanted something students would use — with messaging, real-time features, and a leaderboard to make it fun.",
     github: "https://github.com/aadihuria",
     demo: "https://spotly8.vercel.app",
   },
@@ -35,9 +35,8 @@ const projects = [
     stack: ["ReactJS", "PostgreSQL", "Mapbox GL JS"],
     description:
       "Real-time court availability tracker for 100+ tennis and pickleball courts across SE Michigan. Users submit occupancy data that reflects live on an interactive Mapbox map.",
-    why: "I play tennis a lot around Ann Arbor and kept showing up to full courts. I built the tool I actually needed — with filters for surface type, lighting, and public/private, optimized for mobile so you can check it on the way there.",
-    github: "https://github.com/aadihuria",
-    demo: null,
+    why: "I play tennis and pickleball a lot around SE Michigan and kept showing up to full courts. Built this for anyone who's had the same problem — real-time court availability with filters for surface type, lighting, and public/private, optimized for mobile so you can check it on the way there.",    github: "https://github.com/aadihuria",
+    demo: "https://thenetfinder.vercel.app",
   },
   {
     name: "Black-Litterman Portfolio Optimization Model",

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Aadi Huria — Data Science @ Michigan",
     description:
       "I build things that work — at the intersection of data, software, and systems.",
-    url: "https://aadihuria.com",
+    url: "https://aadihuria.vercel.app",
     siteName: "Aadi Huria",
     type: "website",
   },

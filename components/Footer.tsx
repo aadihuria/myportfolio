@@ -20,7 +20,7 @@ export default function Footer() {
           <h2 className="font-mono text-3xl sm:text-4xl font-bold text-[#E2E8F0]">Let&apos;s Talk</h2>
         </div>
 
-        <p className="text-[#94A3B8] text-lg max-w-xl leading-relaxed mb-10">
+        <p className="text-[#E2E8F0] text-lg max-w-xl leading-relaxed mb-10">
           I&apos;m always open to interesting problems, internship opportunities, or a good tennis match.
         </p>
 
@@ -39,7 +39,7 @@ export default function Footer() {
             href="https://github.com/aadihuria"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#94A3B8] hover:text-[#00E5FF] transition-colors text-sm font-mono"
+            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono"
           >
             <GithubIcon />
             GitHub
@@ -48,7 +48,7 @@ export default function Footer() {
             href="https://linkedin.com/in/aadih"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#94A3B8] hover:text-[#00E5FF] transition-colors text-sm font-mono"
+            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono"
           >
             <LinkedinIcon />
             LinkedIn
@@ -57,10 +57,10 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-[#30363D] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="font-mono text-[#94A3B8] text-xs">
+          <p className="font-mono text-[#E2E8F0] text-xs">
             © 2026 Aadi Huria
           </p>
-          <p className="font-mono text-[#94A3B8] text-xs">
+          <p className="font-mono text-[#E2E8F0] text-xs">
             Built with Next.js · Deployed on Vercel
           </p>
         </div>

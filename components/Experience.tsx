@@ -21,11 +21,15 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const experiences = [
   {
     company: "Amazon",
-    role: "Incoming SDE Intern – AI-Powered Campaign and Creative Management",
+    role: "Software Development Engineer Intern – Amazon Ads",
     dates: "Jun – Aug 2026",
     location: "Seattle, WA",
-    tag: "Upcoming",
-    bullets: ["Incoming SDE Intern on the Amazon Ads AI-Powered Campaign and Creative Management team."],
+    tag: null,
+    bullets: [
+      "Achieved a ~30% reduction in development timeline by engineering a multi-source Retrieval-Augmented Generation (RAG) agentic system to validate product requirements against distributed package constraints and automate code reviews.",
+      "Improved retrieval accuracy from 54% to 93% across 50+ service packages by designing a three-backend retrieval architecture on Amazon Bedrock utilizing deterministic fallback logic and confidence-score filtering.",
+      "Building a team-wide Model Context Protocol (MCP) server in TypeScript to asynchronously mine, quality-gate, and deduplicate package constraints, creating a continuously self-improving knowledge base for the retrieval system.",
+    ],
   },
   {
     company: "SafeBeat Rx",
@@ -96,14 +100,14 @@ export default function Experience() {
                       <p className="text-[#00E5FF] text-sm font-mono mt-0.5">{exp.role}</p>
                     </div>
                     <div className="text-right shrink-0">
-                      <p className="text-[#94A3B8] text-xs font-mono">{exp.dates}</p>
-                      <p className="text-[#94A3B8] text-xs font-mono">{exp.location}</p>
+                      <p className="text-[#E2E8F0] text-xs font-mono">{exp.dates}</p>
+                      <p className="text-[#E2E8F0] text-xs font-mono">{exp.location}</p>
                     </div>
                   </div>
 
                   <ul className="space-y-2">
                     {exp.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-3 text-[#94A3B8] text-sm leading-relaxed">
+                      <li key={j} className="flex gap-3 text-[#E2E8F0] text-sm leading-relaxed">
                         <span className="text-[#00E5FF] mt-0 shrink-0">▸</span>
                         {b}
                       </li>

@@ -7,11 +7,11 @@ import {
 } from "react-icons/si";
 import {
   SiPandas, SiNumpy, SiPytorch, SiTensorflow, SiStreamlit,
-  SiReact, SiNextdotjs, SiPrisma,
+  SiReact, SiNextdotjs, SiPrisma, SiScikitlearn, SiLangchain,
 } from "react-icons/si";
 import {
   SiGit, SiLinux, SiPostgresql, SiSupabase,
-  SiPusher, SiJupyter,
+  SiPusher, SiJupyter, SiVercel, SiTwilio, SiOpenai,
 } from "react-icons/si";
 import { FaJava, FaDatabase, FaAws } from "react-icons/fa";
 import { RiFileExcel2Fill } from "react-icons/ri";
@@ -46,7 +46,7 @@ const skillGroups: { category: string; label: string; skills: Skill[] }[] = [
     label: "languages",
     skills: [
       { name: "Python",     Icon: SiPython,       color: "#3B82F6" },
-      { name: "SQL",        Icon: FaDatabase,      color: "#94A3B8" },
+      { name: "SQL",        Icon: FaDatabase,      color: "#E2E8F0" },
       { name: "R",          Icon: SiR,             color: "#276DC3" },
       { name: "C / C++",   Icon: SiCplusplus,     color: "#00599C" },
       { name: "JavaScript", Icon: SiJavascript,    color: "#F7DF1E" },
@@ -68,6 +68,9 @@ const skillGroups: { category: string; label: string; skills: Skill[] }[] = [
       { name: "React",      Icon: SiReact,      color: "#61DAFB" },
       { name: "Next.js",    Icon: SiNextdotjs,  color: "#E2E8F0" },
       { name: "Prisma",     Icon: SiPrisma,     color: "#2D3748" },
+      { name: "scikit-learn", Icon: SiScikitlearn, color: "#F7931E" },
+      { name: "LangChain",  Icon: SiLangchain,  color: "#1C3C3C" },
+      { name: "Model Context Protocol", Icon: TbMathFunction, color: "#00E5FF" },
       { name: "cvxpy",      Icon: TbMathFunction, color: "#00E5FF" },
     ],
   },
@@ -80,6 +83,9 @@ const skillGroups: { category: string; label: string; skills: Skill[] }[] = [
       { name: "Linux",      Icon: SiLinux,          color: "#FCC624" },
       { name: "PostgreSQL", Icon: SiPostgresql,     color: "#336791" },
       { name: "Supabase",   Icon: SiSupabase,       color: "#3ECF8E" },
+      { name: "Vercel",     Icon: SiVercel,         color: "#E2E8F0" },
+      { name: "Twilio",     Icon: SiTwilio,         color: "#F22F46" },
+      { name: "OpenAI API", Icon: SiOpenai,         color: "#10A37F" },
       { name: "Pusher",     Icon: SiPusher,         color: "#a855f7" },
       { name: "Power BI",   Icon: BsBarChartFill,   color: "#F2C811" },
       { name: "Tableau",    Icon: BsBarChartFill,   color: "#E97627" },
@@ -124,7 +130,7 @@ export default function Skills() {
                         style={{ color: skill.color, flexShrink: 0 }}
                         className="opacity-80 group-hover:opacity-100 transition-opacity"
                       />
-                      <span className="text-[#94A3B8] text-sm group-hover:text-[#E2E8F0] transition-colors duration-150">
+                      <span className="text-[#E2E8F0] text-sm group-hover:text-[#E2E8F0] transition-colors duration-150">
                         {skill.name}
                       </span>
                     </motion.li>

@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Aadi Huria — Data Science @ Michigan",
   description:
-    "Personal site of Aadi Huria — Data Science undergrad at University of Michigan, incoming Amazon Ads SDE Intern, and builder of full-stack + ML projects.",
+    "Personal site of Aadi Huria — Data Science undergrad at University of Michigan, Amazon Ads SDE Intern, and builder of full-stack + ML projects.",
   keywords: ["Aadi Huria", "Data Science", "University of Michigan", "Amazon", "Software Engineer", "Portfolio"],
   authors: [{ name: "Aadi Huria" }],
   openGraph: {

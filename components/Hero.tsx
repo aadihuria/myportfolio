@@ -5,7 +5,7 @@ import { motion, type Easing } from "framer-motion";
 
 const roles = [
   "Data Science @ Michigan",
-  "Incoming Amazon SDE Intern",
+  "Amazon SDE Intern",
   "Builder",
   "Tennis Player",
 ];
@@ -118,7 +118,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0.55}
-          className="text-[#94A3B8] text-lg sm:text-xl max-w-2xl leading-relaxed mb-3"
+          className="text-[#E2E8F0] text-lg sm:text-xl max-w-2xl leading-relaxed mb-3"
           style={{ fontFamily: "var(--font-dm-sans)" }}
         >
           Rising Junior at The University of Michigan studying Data Science 
@@ -130,7 +130,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           custom={0.65}
-          className="text-[#94A3B8] text-sm font-mono mb-10"
+          className="text-[#E2E8F0] text-sm font-mono mb-10"
         >
           📍 Ann Arbor, MI
         </motion.p>
@@ -173,7 +173,7 @@ export default function Hero() {
             href="https://github.com/aadihuria"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#94A3B8] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
+            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
           >
             <GithubIcon />
             <span className="group-hover:underline">GitHub</span>
@@ -182,14 +182,14 @@ export default function Hero() {
             href="https://linkedin.com/in/aadih"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#94A3B8] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
+            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
           >
             <LinkedinIcon />
             <span className="group-hover:underline">LinkedIn</span>
           </a>
           <a
             href="mailto:ahuria@umich.edu"
-            className="flex items-center gap-2 text-[#94A3B8] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
+            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
           >
             <EmailIcon />
             <span className="group-hover:underline">Email</span>
@@ -204,7 +204,7 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[#94A3B8] text-xs font-mono tracking-widest">SCROLL</span>
+        <span className="text-[#E2E8F0] text-xs font-mono tracking-widest">SCROLL</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}

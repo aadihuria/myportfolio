@@ -164,11 +164,11 @@ function TravelMap() {
       <div className="flex items-center gap-4 px-4 pb-3 pt-1">
         <div className="flex items-center gap-1.5">
           <div className="w-3 h-3 rounded-sm bg-[#00E5FF]" />
-          <span className="text-[#94A3B8] text-xs font-mono">visited ({VISITED_NAMES.size})</span>
+          <span className="text-[#E2E8F0] text-xs font-mono">visited ({VISITED_NAMES.size})</span>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="w-3 h-3 rounded-sm bg-[#1C2333] border border-[#30363D]" />
-          <span className="text-[#94A3B8] text-xs font-mono">not yet</span>
+          <span className="text-[#E2E8F0] text-xs font-mono">not yet</span>
         </div>
       </div>
     </div>
@@ -191,7 +191,7 @@ export default function Interests() {
             <div className="glass-card rounded-lg p-5 h-full transition-all duration-300 hover:border-[#00E5FF]/30">
               <div className="text-2xl mb-3">{item.icon}</div>
               <h3 className="font-mono text-sm font-bold text-[#E2E8F0] mb-2">{item.title}</h3>
-              <p className="text-[#94A3B8] text-sm leading-relaxed">{item.description}</p>
+              <p className="text-[#E2E8F0] text-sm leading-relaxed">{item.description}</p>
             </div>
           </FadeUp>
         ))}

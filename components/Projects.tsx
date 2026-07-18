@@ -71,7 +71,7 @@ export default function Projects() {
               {/* Header */}
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
-                  <p className="font-mono text-[#94A3B8] text-xs mb-1">{project.date}</p>
+                  <p className="font-mono text-[#E2E8F0] text-xs mb-1">{project.date}</p>
                   <h3 className="font-mono text-base font-bold text-[#E2E8F0] leading-snug group-hover:text-[#00E5FF] transition-colors duration-200">
                     {project.name}
                   </h3>
@@ -92,7 +92,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#94A3B8] hover:text-[#00E5FF] transition-colors"
+                    className="text-[#E2E8F0] hover:text-[#00E5FF] transition-colors"
                     aria-label="GitHub"
                   >
                     <GithubIcon />
@@ -113,14 +113,14 @@ export default function Projects() {
               </div>
 
               {/* Description */}
-              <p className="text-[#94A3B8] text-sm leading-relaxed mb-4 flex-grow">
+              <p className="text-[#E2E8F0] text-sm leading-relaxed mb-4 flex-grow">
                 {project.description}
               </p>
 
               {/* Why */}
               <div className="border-t border-[#30363D] pt-4 mt-auto">
                 <p className="font-mono text-[#00E5FF] text-xs mb-2">// why I built it</p>
-                <p className="text-[#94A3B8] text-sm leading-relaxed italic">
+                <p className="text-[#E2E8F0] text-sm leading-relaxed italic">
                   {project.why}
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function Projects() {
             className="glass-card rounded-lg p-6 h-full flex flex-col items-center justify-center border-dashed opacity-50 hover:opacity-70 transition-opacity"
             style={{ minHeight: "200px" }}
           >
-            <p className="font-mono text-[#94A3B8] text-sm">more coming soon</p>
+            <p className="font-mono text-[#E2E8F0] text-sm">more coming soon</p>
             <p className="font-mono text-[#00E5FF] text-xs mt-2">// always building</p>
           </motion.div>
         </FadeUp>

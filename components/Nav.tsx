@@ -55,7 +55,7 @@ export default function Nav() {
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="hover-underline text-[#94A3B8] hover:text-[#E2E8F0] text-sm transition-colors duration-200 font-[var(--font-dm-sans)] bg-transparent border-none cursor-pointer tracking-wide"
+              className="hover-underline text-[#E2E8F0] hover:text-[#E2E8F0] text-sm transition-colors duration-200 font-[var(--font-dm-sans)] bg-transparent border-none cursor-pointer tracking-wide"
             >
               {link.label}
             </button>
@@ -98,7 +98,7 @@ export default function Nav() {
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-left text-[#94A3B8] hover:text-[#00E5FF] text-sm transition-colors bg-transparent border-none cursor-pointer font-[var(--font-dm-sans)] tracking-wide"
+                  className="text-left text-[#E2E8F0] hover:text-[#00E5FF] text-sm transition-colors bg-transparent border-none cursor-pointer font-[var(--font-dm-sans)] tracking-wide"
                 >
                   {link.label}
                 </button>

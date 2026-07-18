@@ -52,7 +52,7 @@ export default function About() {
         {/* Text */}
         <div className="space-y-5">
           <FadeUp delay={0.15}>
-          <p className="text-[#94A3B8] text-lg leading-relaxed">
+          <p className="text-[#E2E8F0] text-lg leading-relaxed">
             Aadi is a junior at the University of Michigan studying Data Science.
             He grew up in{" "}
             <span className="text-[#E2E8F0]">Canton, MI</span>, and played tennis competitively
@@ -61,14 +61,14 @@ export default function About() {
           </p>
         </FadeUp>
         <FadeUp delay={0.25}>
-          <p className="text-[#94A3B8] text-lg leading-relaxed">
+          <p className="text-[#E2E8F0] text-lg leading-relaxed">
             That same drive led him to found{" "}
             <span className="text-[#E2E8F0] font-medium">Serve To Serve Academy</span>,
             a nonprofit making tennis accessible to underprivileged youth.
           </p>
         </FadeUp>
         <FadeUp delay={0.35}>
-          <p className="text-[#94A3B8] text-lg leading-relaxed">
+          <p className="text-[#E2E8F0] text-lg leading-relaxed">
             He&apos;s genuinely excited about{" "}
             <span className="text-[#E2E8F0] font-medium">AI</span> — not just as a
             tool, but as a way to solve problems that actually matter. At{" "}
@@ -79,10 +79,11 @@ export default function About() {
           </p>
         </FadeUp>
         <FadeUp delay={0.45}>
-          <p className="text-[#94A3B8] text-lg leading-relaxed">
-            This summer he&apos;s heading to Seattle as an{" "}
+          <p className="text-[#E2E8F0] text-lg leading-relaxed">
+            This summer he&apos;s in Seattle as an{" "}
             <span className="text-[#E2E8F0] font-medium">SDE Intern at Amazon</span> on
-            the AI-Powered Ads team.
+            the Amazon Ads team, building RAG and MCP systems that improve retrieval
+            accuracy and streamline development workflows.
           </p>
         </FadeUp>
         </div>

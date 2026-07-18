@@ -7,7 +7,7 @@
   --color-accent: #00E5FF;
   --color-accent-dim: #38BDF8;
   --color-text-primary: #E2E8F0;
-  --color-text-secondary: #94A3B8;
+  --color-text-secondary: #E2E8F0;
   --color-border: #30363D;
   --font-mono: "Space Mono", monospace;
   --font-sans: "DM Sans", sans-serif;
@@ -20,7 +20,7 @@
   --accent: #00E5FF;
   --accent-dim: #38BDF8;
   --text-primary: #E2E8F0;
-  --text-secondary: #94A3B8;
+  --text-secondary: #E2E8F0;
   --border: #30363D;
 }
 

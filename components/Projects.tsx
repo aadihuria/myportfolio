@@ -55,8 +55,8 @@ export default function Projects() {
     <section id="projects" className="py-28 max-w-6xl mx-auto px-6">
       <FadeUp>
         <div className="flex items-center gap-4 mb-14">
-          <div className="w-8 h-px bg-[#00E5FF]" />
-          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-[#E2E8F0]">Projects</h2>
+          <div className="w-8 h-px bg-[#2C5AA0]" />
+          <h2 className="font-[family-name:var(--font-fraunces)] text-3xl sm:text-4xl font-medium text-[#1B2130]">Projects</h2>
         </div>
       </FadeUp>
 
@@ -64,15 +64,15 @@ export default function Projects() {
         {projects.map((project, i) => (
           <FadeUp key={project.name} delay={i * 0.1}>
             <motion.div
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
-              className="glass-card rounded-lg p-6 h-full flex flex-col transition-all duration-300 group"
+              className="card rounded-xl p-6 h-full flex flex-col group"
             >
               {/* Header */}
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
-                  <p className="font-mono text-[#E2E8F0] text-xs mb-1">{project.date}</p>
-                  <h3 className="font-mono text-base font-bold text-[#E2E8F0] leading-snug group-hover:text-[#00E5FF] transition-colors duration-200">
+                  <p className="font-[family-name:var(--font-plex-mono)] text-[#8993A6] text-xs mb-1">{project.date}</p>
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-lg font-medium text-[#1B2130] leading-snug">
                     {project.name}
                   </h3>
                 </div>
@@ -82,7 +82,7 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 font-mono text-xs px-2.5 py-1 rounded border border-[#00E5FF]/30 text-[#00E5FF] bg-[#00E5FF]/5 hover:bg-[#00E5FF]/15 transition-colors duration-200"
+                      className="flex items-center gap-1.5 font-[family-name:var(--font-plex-mono)] text-xs px-2.5 py-1 rounded-full border border-[#CBDBF0] text-[#2C5AA0] bg-[#E8EFF9] hover:bg-[#dbe7f7] transition-colors duration-200"
                     >
                       <ExternalLinkIcon />
                       Live Demo
@@ -92,7 +92,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#E2E8F0] hover:text-[#00E5FF] transition-colors"
+                    className="text-[#545F72] hover:text-[#2C5AA0] transition-colors"
                     aria-label="GitHub"
                   >
                     <GithubIcon />
@@ -105,7 +105,7 @@ export default function Projects() {
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="skill-badge"
+                    className="pill"
                   >
                     {tech}
                   </span>
@@ -113,14 +113,14 @@ export default function Projects() {
               </div>
 
               {/* Description */}
-              <p className="text-[#E2E8F0] text-sm leading-relaxed mb-4 flex-grow">
+              <p className="text-[#3A4356] text-sm leading-relaxed mb-4 flex-grow">
                 {project.description}
               </p>
 
               {/* Why */}
-              <div className="border-t border-[#30363D] pt-4 mt-auto">
-                <p className="font-mono text-[#00E5FF] text-xs mb-2">// why I built it</p>
-                <p className="text-[#E2E8F0] text-sm leading-relaxed italic">
+              <div className="border-t border-[#E0E5EE] pt-4 mt-auto">
+                <p className="eyebrow mb-2">Why I built it</p>
+                <p className="text-[#545F72] text-sm leading-relaxed font-[family-name:var(--font-fraunces)] italic">
                   {project.why}
                 </p>
               </div>
@@ -131,13 +131,13 @@ export default function Projects() {
         {/* Coming soon placeholder for symmetry */}
         <FadeUp delay={0.3}>
           <motion.div
-            whileHover={{ y: -4 }}
+            whileHover={{ y: -3 }}
             transition={{ duration: 0.2 }}
-            className="glass-card rounded-lg p-6 h-full flex flex-col items-center justify-center border-dashed opacity-50 hover:opacity-70 transition-opacity"
+            className="rounded-xl p-6 h-full flex flex-col items-center justify-center border border-dashed border-[#C7CFDC] text-center"
             style={{ minHeight: "200px" }}
           >
-            <p className="font-mono text-[#E2E8F0] text-sm">more coming soon</p>
-            <p className="font-mono text-[#00E5FF] text-xs mt-2">// always building</p>
+            <p className="text-[#545F72] text-sm">More coming soon</p>
+            <p className="eyebrow mt-2">Always building</p>
           </motion.div>
         </FadeUp>
       </div>

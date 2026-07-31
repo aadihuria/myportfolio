@@ -67,48 +67,48 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-28 bg-[#161B22]/40">
+    <section id="experience" className="py-28 border-t border-[#E0E5EE]">
       <div className="max-w-6xl mx-auto px-6">
         <FadeUp>
           <div className="flex items-center gap-4 mb-14">
-            <div className="w-8 h-px bg-[#00E5FF]" />
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-[#E2E8F0]">Experience</h2>
+            <div className="w-8 h-px bg-[#2C5AA0]" />
+            <h2 className="font-[family-name:var(--font-fraunces)] text-3xl sm:text-4xl font-medium text-[#1B2130]">Experience</h2>
           </div>
         </FadeUp>
 
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-[#00E5FF] via-[#30363D] to-transparent hidden md:block" />
+          <div className="timeline-line absolute left-0 top-2 bottom-2 w-px hidden md:block" />
 
           <div className="space-y-10 md:pl-10">
             {experiences.map((exp, i) => (
               <FadeUp key={exp.company} delay={i * 0.1}>
-                <div className="relative glass-card rounded-lg p-6 transition-all duration-300 group">
+                <div className="relative card rounded-xl p-6 group">
                   {/* Timeline dot */}
-                  <div className="absolute -left-[41px] top-7 w-3 h-3 rounded-full bg-[#0D1117] border-2 border-[#00E5FF] hidden md:block group-hover:bg-[#00E5FF] transition-colors duration-200" />
+                  <div className="absolute -left-[41px] top-7 w-3 h-3 rounded-full bg-[#F3F5F9] border-2 border-[#2C5AA0] hidden md:block" />
 
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
                       <div className="flex items-center gap-3 flex-wrap">
-                        <h3 className="font-mono text-lg font-bold text-[#E2E8F0]">{exp.company}</h3>
+                        <h3 className="font-[family-name:var(--font-fraunces)] text-lg font-medium text-[#1B2130]">{exp.company}</h3>
                         {exp.tag && (
-                          <span className="text-xs font-mono px-2 py-0.5 rounded bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/20">
+                          <span className="pill">
                             {exp.tag}
                           </span>
                         )}
                       </div>
-                      <p className="text-[#00E5FF] text-sm font-mono mt-0.5">{exp.role}</p>
+                      <p className="text-[#2C5AA0] text-sm mt-0.5">{exp.role}</p>
                     </div>
                     <div className="text-right shrink-0">
-                      <p className="text-[#E2E8F0] text-xs font-mono">{exp.dates}</p>
-                      <p className="text-[#E2E8F0] text-xs font-mono">{exp.location}</p>
+                      <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">{exp.dates}</p>
+                      <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">{exp.location}</p>
                     </div>
                   </div>
 
                   <ul className="space-y-2">
                     {exp.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-3 text-[#E2E8F0] text-sm leading-relaxed">
-                        <span className="text-[#00E5FF] mt-0 shrink-0">▸</span>
+                      <li key={j} className="flex gap-3 text-[#3A4356] text-sm leading-relaxed">
+                        <span className="text-[#2C5AA0] mt-0 shrink-0">–</span>
                         {b}
                       </li>
                     ))}

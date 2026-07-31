@@ -46,7 +46,7 @@ const skillGroups: { category: string; label: string; skills: Skill[] }[] = [
     label: "languages",
     skills: [
       { name: "Python",     Icon: SiPython,       color: "#3B82F6" },
-      { name: "SQL",        Icon: FaDatabase,      color: "#E2E8F0" },
+      { name: "SQL",        Icon: FaDatabase,      color: "#545F72" },
       { name: "R",          Icon: SiR,             color: "#276DC3" },
       { name: "C / C++",   Icon: SiCplusplus,     color: "#00599C" },
       { name: "JavaScript", Icon: SiJavascript,    color: "#F7DF1E" },
@@ -66,12 +66,12 @@ const skillGroups: { category: string; label: string; skills: Skill[] }[] = [
       { name: "TensorFlow", Icon: SiTensorflow, color: "#FF6F00" },
       { name: "Streamlit",  Icon: SiStreamlit,  color: "#FF4B4B" },
       { name: "React",      Icon: SiReact,      color: "#61DAFB" },
-      { name: "Next.js",    Icon: SiNextdotjs,  color: "#E2E8F0" },
+      { name: "Next.js",    Icon: SiNextdotjs,  color: "#1B2130" },
       { name: "Prisma",     Icon: SiPrisma,     color: "#2D3748" },
       { name: "scikit-learn", Icon: SiScikitlearn, color: "#F7931E" },
       { name: "LangChain",  Icon: SiLangchain,  color: "#1C3C3C" },
-      { name: "Model Context Protocol", Icon: TbMathFunction, color: "#00E5FF" },
-      { name: "cvxpy",      Icon: TbMathFunction, color: "#00E5FF" },
+      { name: "Model Context Protocol", Icon: TbMathFunction, color: "#2C5AA0" },
+      { name: "cvxpy",      Icon: TbMathFunction, color: "#2C5AA0" },
     ],
   },
   {
@@ -83,7 +83,7 @@ const skillGroups: { category: string; label: string; skills: Skill[] }[] = [
       { name: "Linux",      Icon: SiLinux,          color: "#FCC624" },
       { name: "PostgreSQL", Icon: SiPostgresql,     color: "#336791" },
       { name: "Supabase",   Icon: SiSupabase,       color: "#3ECF8E" },
-      { name: "Vercel",     Icon: SiVercel,         color: "#E2E8F0" },
+      { name: "Vercel",     Icon: SiVercel,         color: "#1B2130" },
       { name: "Twilio",     Icon: SiTwilio,         color: "#F22F46" },
       { name: "OpenAI API", Icon: SiOpenai,         color: "#10A37F" },
       { name: "Pusher",     Icon: SiPusher,         color: "#a855f7" },
@@ -97,40 +97,40 @@ const skillGroups: { category: string; label: string; skills: Skill[] }[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 bg-[#161B22]/40">
+    <section id="skills" className="py-28 border-t border-[#E0E5EE]">
       <div className="max-w-6xl mx-auto px-6">
         <FadeUp>
           <div className="flex items-center gap-4 mb-14">
-            <div className="w-8 h-px bg-[#00E5FF]" />
-            <h2 className="font-mono text-3xl sm:text-4xl font-bold text-[#E2E8F0]">
+            <div className="w-8 h-px bg-[#2C5AA0]" />
+            <h2 className="font-[family-name:var(--font-fraunces)] text-3xl sm:text-4xl font-medium text-[#1B2130]">
               Skills
             </h2>
           </div>
         </FadeUp>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {skillGroups.map((group, i) => (
             <FadeUp key={group.category} delay={i * 0.1}>
-              <div className="glass-card rounded-lg p-6 transition-all duration-300 h-full">
-                <p className="font-mono text-[#00E5FF] text-xs tracking-widest mb-6">
-                  // {group.label}
+              <div className="card rounded-xl p-6 h-full">
+                <p className="eyebrow mb-6">
+                  {group.label}
                 </p>
                 <ul className="space-y-3">
                   {group.skills.map((skill, j) => (
                     <motion.li
                       key={skill.name}
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={{ opacity: 0, x: -8 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 + j * 0.05, duration: 0.4 }}
+                      transition={{ delay: i * 0.06 + j * 0.03, duration: 0.35 }}
                       className="flex items-center gap-3 group cursor-default"
                     >
                       <skill.Icon
-                        size={18}
+                        size={17}
                         style={{ color: skill.color, flexShrink: 0 }}
-                        className="opacity-80 group-hover:opacity-100 transition-opacity"
+                        className="opacity-70 group-hover:opacity-100 transition-opacity"
                       />
-                      <span className="text-[#E2E8F0] text-sm group-hover:text-[#E2E8F0] transition-colors duration-150">
+                      <span className="text-[#3A4356] text-sm">
                         {skill.name}
                       </span>
                     </motion.li>

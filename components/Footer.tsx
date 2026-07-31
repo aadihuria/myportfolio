@@ -8,26 +8,26 @@ export default function Footer() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="contact" className="py-28 max-w-6xl mx-auto px-6">
+    <section id="contact" className="py-28 max-w-6xl mx-auto px-6 border-t border-[#E0E5EE]">
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-8 h-px bg-[#00E5FF]" />
-          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-[#E2E8F0]">Let&apos;s Talk</h2>
+          <div className="w-8 h-px bg-[#2C5AA0]" />
+          <h2 className="font-[family-name:var(--font-fraunces)] text-3xl sm:text-4xl font-medium text-[#1B2130]">Let&apos;s talk</h2>
         </div>
 
-        <p className="text-[#E2E8F0] text-lg max-w-xl leading-relaxed mb-10">
+        <p className="text-[#545F72] text-lg max-w-xl leading-relaxed mb-10">
           I&apos;m always open to interesting problems, internship opportunities, or a good tennis match.
         </p>
 
         {/* Email CTA */}
         <a
           href="mailto:ahuria@umich.edu"
-          className="inline-flex items-center gap-3 px-8 py-4 border border-[#00E5FF] text-[#00E5FF] font-mono text-sm rounded hover:bg-[#00E5FF]/10 transition-all duration-200 mb-12 group"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-[#2C5AA0] text-white text-sm font-medium rounded-md hover:bg-[#1F4278] transition-all duration-200 mb-12 group"
         >
           <span>ahuria@umich.edu</span>
           <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
@@ -39,7 +39,7 @@ export default function Footer() {
             href="https://github.com/aadihuria"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono"
+            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm"
           >
             <GithubIcon />
             GitHub
@@ -48,7 +48,7 @@ export default function Footer() {
             href="https://linkedin.com/in/aadih"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono"
+            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm"
           >
             <LinkedinIcon />
             LinkedIn
@@ -56,11 +56,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#30363D] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="font-mono text-[#E2E8F0] text-xs">
+        <div className="border-t border-[#E0E5EE] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="font-[family-name:var(--font-plex-mono)] text-[#8993A6] text-xs">
             © 2026 Aadi Huria
           </p>
-          <p className="font-mono text-[#E2E8F0] text-xs">
+          <p className="font-[family-name:var(--font-plex-mono)] text-[#8993A6] text-xs">
             Built with Next.js · Deployed on Vercel
           </p>
         </div>

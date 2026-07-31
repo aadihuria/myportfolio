@@ -1,146 +1,72 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion, type Easing } from "framer-motion";
-
-const roles = [
-  "Data Science @ Michigan",
-  "Amazon SDE Intern",
-  "Builder",
-  "Tennis Player",
-];
-
-function TypewriterText() {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [phase, setPhase] = useState<"typing" | "pausing" | "erasing">("typing");
-
-  useEffect(() => {
-    const current = roles[roleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (phase === "typing") {
-      if (displayed.length < current.length) {
-        timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 60);
-      } else {
-        timeout = setTimeout(() => setPhase("pausing"), 1800);
-      }
-    } else if (phase === "pausing") {
-      timeout = setTimeout(() => setPhase("erasing"), 400);
-    } else {
-      if (displayed.length > 0) {
-        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 30);
-      } else {
-        setRoleIndex((i) => (i + 1) % roles.length);
-        setPhase("typing");
-      }
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayed, phase, roleIndex]);
-
-  return (
-    <span className="text-[#00E5FF]">
-      {displayed}
-      <span className="cursor-blink text-[#00E5FF]">|</span>
-    </span>
-  );
-}
 
 const EASE_OUT: Easing = "easeOut";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: EASE_OUT, delay },
+    transition: { duration: 0.6, ease: EASE_OUT, delay },
   }),
 };
+
+const lines = [
+  "I'm a Data Science student at the University of Michigan.",
+  "This summer I'm building retrieval systems as an SDE Intern on Amazon Ads.",
+  "I like full-stack products and ML that solve problems people actually have.",
+  "Outside of code — competitive tennis, and coaching through the nonprofit I founded.",
+];
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Radial glow center */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(0,229,255,0.06) 0%, transparent 70%)",
-        }}
-      />
-
-      {/* Corner accents */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-l border-t border-[#00E5FF]/20 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-r border-b border-[#00E5FF]/20 pointer-events-none" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-24 pb-16">
-        {/* Pre-label */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-20 w-full">
         <motion.p
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={0.1}
-          className="font-mono text-[#00E5FF] text-sm tracking-widest mb-4"
+          custom={0.05}
+          className="eyebrow mb-5"
         >
-          Hello, I&apos;m
+          Ann Arbor, MI
         </motion.p>
 
-        {/* Name */}
         <motion.h1
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={0.25}
-          className="font-mono text-6xl sm:text-7xl md:text-8xl font-bold text-[#E2E8F0] leading-none tracking-tight mb-2"
+          custom={0.15}
+          className="font-[family-name:var(--font-fraunces)] text-5xl sm:text-6xl md:text-7xl font-medium text-[#1B2130] leading-[1.05] tracking-tight mb-10"
         >
-          Aadi Huria
-          <span className="cursor-blink text-[#00E5FF] ml-2">_</span>
+          Hi, I&apos;m Aadi.
         </motion.h1>
 
-        {/* Typewriter subtitle */}
+        <div className="space-y-3 mb-10 max-w-2xl">
+          {lines.map((line, i) => (
+            <motion.p
+              key={line}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0.25 + i * 0.08}
+              className="text-[#545F72] text-lg leading-relaxed"
+            >
+              {line}
+            </motion.p>
+          ))}
+        </div>
+
         <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.4}
-          className="text-xl sm:text-2xl md:text-3xl font-mono mt-4 mb-6 h-10"
-        >
-          <TypewriterText />
-        </motion.div>
-
-        {/* One-liner */}
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.55}
-          className="text-[#E2E8F0] text-lg sm:text-xl max-w-2xl leading-relaxed mb-3"
-          style={{ fontFamily: "var(--font-dm-sans)" }}
-        >
-          Rising Junior at The University of Michigan studying Data Science 
-        </motion.p>
-
-        {/* Location */}
-        <motion.p
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0.65}
-          className="text-[#E2E8F0] text-sm font-mono mb-10"
-        >
-          📍 Ann Arbor, MI
-        </motion.p>
-
-        {/* CTA buttons */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.75}
           className="flex flex-wrap gap-4 mb-10"
         >
           <a
@@ -149,31 +75,30 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-6 py-3 bg-[#00E5FF] text-[#0D1117] font-mono text-sm font-bold rounded tracking-wide hover:bg-[#38BDF8] transition-colors duration-200"
+            className="px-6 py-3 bg-[#2C5AA0] text-white text-sm font-medium rounded-md tracking-wide hover:bg-[#1F4278] transition-colors duration-200"
           >
-            View My Work
+            View my work
           </a>
           <a
             href="mailto:ahuria@umich.edu"
-            className="px-6 py-3 border border-[#00E5FF] text-[#00E5FF] font-mono text-sm rounded tracking-wide hover:bg-[#00E5FF]/10 transition-colors duration-200"
+            className="px-6 py-3 border border-[#C7CFDC] text-[#1B2130] text-sm font-medium rounded-md tracking-wide hover:border-[#2C5AA0] hover:text-[#2C5AA0] transition-colors duration-200"
           >
-            Get In Touch
+            Get in touch
           </a>
         </motion.div>
 
-        {/* Social links */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={0.85}
+          custom={0.75}
           className="flex items-center gap-6"
         >
           <a
             href="https://github.com/aadihuria"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
+            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
           >
             <GithubIcon />
             <span className="group-hover:underline">GitHub</span>
@@ -182,14 +107,14 @@ export default function Hero() {
             href="https://linkedin.com/in/aadih"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
+            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
           >
             <LinkedinIcon />
             <span className="group-hover:underline">LinkedIn</span>
           </a>
           <a
             href="mailto:ahuria@umich.edu"
-            className="flex items-center gap-2 text-[#E2E8F0] hover:text-[#00E5FF] transition-colors text-sm font-mono group"
+            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
           >
             <EmailIcon />
             <span className="group-hover:underline">Email</span>
@@ -201,15 +126,11 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        transition={{ delay: 1.1, duration: 0.6 }}
+        className="hidden sm:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2"
       >
-        <span className="text-[#E2E8F0] text-xs font-mono tracking-widest">SCROLL</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="w-px h-10 bg-gradient-to-b from-[#00E5FF] to-transparent"
-        />
+        <span className="text-[#8993A6] text-xs tracking-widest">SCROLL</span>
+        <div className="w-px h-8 bg-[#C7CFDC]" />
       </motion.div>
     </section>
   );

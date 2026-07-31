@@ -30,23 +30,23 @@ export default function Nav() {
 
   return (
     <motion.nav
-      initial={{ y: -60, opacity: 0 }}
+      initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0D1117]/90 backdrop-blur-md border-b border-[#30363D]/60"
-          : "bg-transparent"
+          ? "bg-[#F3F5F9]/85 backdrop-blur-sm border-b border-[#E0E5EE]"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
+        {/* Wordmark */}
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-          className="font-mono text-sm text-[#00E5FF] hover:opacity-80 transition-opacity tracking-widest"
+          className="font-[family-name:var(--font-fraunces)] text-lg text-[#1B2130] hover:text-[#2C5AA0] transition-colors"
         >
-          aadi huria
+          Aadi Huria
         </a>
 
         {/* Desktop links */}
@@ -55,7 +55,7 @@ export default function Nav() {
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="hover-underline text-[#E2E8F0] hover:text-[#E2E8F0] text-sm transition-colors duration-200 font-[var(--font-dm-sans)] bg-transparent border-none cursor-pointer tracking-wide"
+              className="hover-underline text-[#545F72] hover:text-[#1B2130] text-sm transition-colors duration-200 font-[family-name:var(--font-plex-sans)] bg-transparent border-none cursor-pointer"
             >
               {link.label}
             </button>
@@ -70,15 +70,15 @@ export default function Nav() {
         >
           <motion.span
             animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-[#E2E8F0] origin-center"
+            className="block w-5 h-px bg-[#1B2130] origin-center"
           />
           <motion.span
             animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block w-5 h-px bg-[#E2E8F0]"
+            className="block w-5 h-px bg-[#1B2130]"
           />
           <motion.span
             animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-[#E2E8F0] origin-center"
+            className="block w-5 h-px bg-[#1B2130] origin-center"
           />
         </button>
       </div>
@@ -91,14 +91,14 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-[#161B22]/95 backdrop-blur-md border-b border-[#30363D]"
+            className="md:hidden bg-[#F3F5F9]/95 backdrop-blur-sm border-b border-[#E0E5EE]"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {links.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-left text-[#E2E8F0] hover:text-[#00E5FF] text-sm transition-colors bg-transparent border-none cursor-pointer font-[var(--font-dm-sans)] tracking-wide"
+                  className="text-left text-[#545F72] hover:text-[#1B2130] text-sm transition-colors bg-transparent border-none cursor-pointer font-[family-name:var(--font-plex-sans)]"
                 >
                   {link.label}
                 </button>

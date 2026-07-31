@@ -1,4 +1,5 @@
 import Nav from "@/components/Nav";
+import CustomCursor from "@/components/CustomCursor";
 import Hero from "@/components/Hero";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen text-[#1B2130]">
       <div className="bg-field" aria-hidden="true" />
+      <CustomCursor />
       <div className="relative z-10">
         <Nav />
         <Hero />

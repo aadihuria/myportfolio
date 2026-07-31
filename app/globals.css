@@ -28,6 +28,7 @@
   --accent-hover: #1F4278;
   --accent-soft: #E8EFF9;
   --accent-soft-line: #CBDBF0;
+  --ease-cool: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -87,6 +88,19 @@ body {
     repeating-radial-gradient(circle at 12% 8%, transparent 0, transparent 58px, rgba(38, 80, 143, 0.065) 59px, transparent 60px),
     repeating-radial-gradient(circle at 90% 82%, transparent 0, transparent 74px, rgba(38, 80, 143, 0.055) 75px, transparent 76px),
     linear-gradient(180deg, rgba(38, 80, 143, 0.05), transparent 45%);
+  background-position: 0px 0px, 0px 0px, 0 0;
+  animation: bg-drift 52s ease-in-out infinite;
+}
+
+@keyframes bg-drift {
+  0%, 100% { background-position: 0px 0px, 0px 0px, 0 0; }
+  50% { background-position: 44px 32px, -36px 40px, 0 0; }
+}
+
+/* Custom cursor */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
 }
 
 /* Card */
@@ -95,7 +109,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: 0 1px 2px rgba(27, 33, 48, 0.04), 0 16px 32px -24px rgba(27, 33, 48, 0.22);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.4s var(--ease-cool), box-shadow 0.4s var(--ease-cool), transform 0.4s var(--ease-cool);
 }
 .card:hover {
   border-color: var(--line-strong);
@@ -114,7 +128,7 @@ body {
   letter-spacing: 0.01em;
   padding: 4px 10px;
   border-radius: 999px;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: background 0.3s var(--ease-cool), border-color 0.3s var(--ease-cool);
 }
 
 /* Section eyebrow label */
@@ -139,7 +153,7 @@ body {
   width: 0;
   height: 1px;
   background: var(--accent);
-  transition: width 0.25s ease;
+  transition: width 0.35s var(--ease-cool);
 }
 .hover-underline:hover::after {
   width: 100%;

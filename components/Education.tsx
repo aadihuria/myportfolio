@@ -21,10 +21,10 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 export default function Education() {
   return (
-    <section id="education" className="py-28 border-t border-[#E0E5EE]">
+    <section id="education" className="py-14 border-t border-[#E0E5EE]">
       <div className="max-w-6xl mx-auto px-6">
         <FadeUp>
-          <div className="flex items-center gap-4 mb-14">
+          <div className="flex items-center gap-4 mb-6">
             <div className="w-8 h-px bg-[#2C5AA0]" />
             <h2 className="font-[family-name:var(--font-fraunces)] text-3xl sm:text-4xl font-medium text-[#1B2130]">
               Education
@@ -33,13 +33,21 @@ export default function Education() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="card rounded-xl p-6 flex items-center gap-5">
+          <div className="card rounded-xl p-5 flex items-center gap-4">
             <CompanyLogo name="University of Michigan" domain="umich.edu" />
-            <div>
-              <h3 className="font-[family-name:var(--font-fraunces)] text-lg font-medium text-[#1B2130]">
-                University of Michigan, Ann Arbor
-              </h3>
-              <p className="text-[#2C5AA0] text-sm mt-0.5">B.S. in Data Science · Class of 2027</p>
+            <div className="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <div>
+                <h3 className="font-[family-name:var(--font-fraunces)] text-lg font-medium text-[#1B2130]">
+                  University of Michigan, Ann Arbor
+                </h3>
+                <p className="text-[#2C5AA0] text-sm mt-0.5">
+                  B.S.E. in Data Science · Minor in Mathematics
+                </p>
+              </div>
+              <div className="sm:text-right shrink-0">
+                <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">College of Engineering</p>
+                <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">Class of 2027</p>
+              </div>
             </div>
           </div>
         </FadeUp>

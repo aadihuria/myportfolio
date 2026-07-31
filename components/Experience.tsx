@@ -58,7 +58,7 @@ const experiences = [
   },
   {
     company: "Enactus Consulting Club, University of Michigan",
-    domain: "enactus.org",
+    domain: "umich.edu",
     role: "Data & Technology Lead – Restaurant client seeking profit improvement",
     dates: "Jan 2025 – Present",
     location: "Ann Arbor, MI",

@@ -16,7 +16,7 @@ const fadeUp = {
 
 const lines = [
   "Junior at the University of Michigan, studying Data Science.",
-  "Right now I'm on the Amazon Ads team in Seattle, working on retrieval systems and internal tooling.",
+  "Right now I'm at Amazon in Seattle, interning as a Software Development Engineer.",
   "I've also built a few things on the side — a study spot finder for Ann Arbor, a court tracker for tennis and pickleball, and a portfolio model from a stats class that got a little out of hand.",
   "Played competitive tennis growing up, which is why I started Serve To Serve Academy.",
 ];

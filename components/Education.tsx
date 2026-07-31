@@ -46,7 +46,7 @@ export default function Education() {
               </div>
               <div className="sm:text-right shrink-0">
                 <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">College of Engineering</p>
-                <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">Class of 2027</p>
+                <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">Class of 2028</p>
               </div>
             </div>
           </div>

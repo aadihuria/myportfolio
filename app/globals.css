@@ -89,33 +89,40 @@ body {
     repeating-radial-gradient(circle at 12% 8%, transparent 0, transparent 58px, rgba(38, 80, 143, 0.06) 59px, transparent 60px),
     repeating-radial-gradient(circle at 90% 82%, transparent 0, transparent 74px, rgba(38, 80, 143, 0.05) 75px, transparent 76px);
   background-position: 0px 0px, 0px 0px;
-  animation: bg-drift 22s ease-in-out infinite;
+  animation: bg-drift 26s ease-in-out infinite;
 }
 
-.bg-field::before,
-.bg-field::after {
-  content: "";
+.bg-orb {
   position: absolute;
   border-radius: 50%;
   will-change: transform;
 }
 
-.bg-field::before {
-  width: 58vw;
-  height: 58vw;
-  top: -18vw;
-  left: -14vw;
-  background: radial-gradient(circle, rgba(44, 90, 160, 0.3) 0%, rgba(44, 90, 160, 0.13) 45%, transparent 72%);
-  animation: blob-drift-a 16s ease-in-out infinite;
+.bg-orb-a {
+  width: 56vw;
+  height: 56vw;
+  top: -20vw;
+  left: -16vw;
+  background: radial-gradient(circle, rgba(44, 90, 160, 0.34) 0%, rgba(44, 90, 160, 0.14) 45%, transparent 72%);
+  animation: orb-a 24s ease-in-out infinite;
 }
 
-.bg-field::after {
-  width: 52vw;
-  height: 52vw;
-  bottom: -20vw;
+.bg-orb-b {
+  width: 48vw;
+  height: 48vw;
+  bottom: -18vw;
   right: -12vw;
-  background: radial-gradient(circle, rgba(60, 122, 178, 0.28) 0%, rgba(60, 122, 178, 0.12) 45%, transparent 72%);
-  animation: blob-drift-b 20s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(60, 122, 178, 0.3) 0%, rgba(60, 122, 178, 0.13) 45%, transparent 72%);
+  animation: orb-b 29s ease-in-out infinite;
+}
+
+.bg-orb-c {
+  width: 32vw;
+  height: 32vw;
+  top: 28%;
+  left: 52%;
+  background: radial-gradient(circle, rgba(80, 145, 195, 0.24) 0%, rgba(80, 145, 195, 0.09) 45%, transparent 72%);
+  animation: orb-c 20s ease-in-out infinite;
 }
 
 @keyframes bg-drift {
@@ -123,14 +130,24 @@ body {
   50% { background-position: 140px 100px, -110px 120px; }
 }
 
-@keyframes blob-drift-a {
+@keyframes orb-a {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(16vw, 12vw); }
+  25% { transform: translate(14vw, 4vw); }
+  50% { transform: translate(20vw, 15vw); }
+  75% { transform: translate(5vw, 17vw); }
 }
 
-@keyframes blob-drift-b {
+@keyframes orb-b {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-15vw, -11vw); }
+  25% { transform: translate(-9vw, -7vw); }
+  50% { transform: translate(-18vw, -15vw); }
+  75% { transform: translate(-8vw, -19vw); }
+}
+
+@keyframes orb-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-13vw, 9vw) scale(1.15); }
+  66% { transform: translate(11vw, -7vw) scale(0.88); }
 }
 
 /* Custom cursor */

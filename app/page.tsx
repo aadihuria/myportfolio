@@ -11,7 +11,11 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="relative min-h-screen text-[#1B2130]">
-      <div className="bg-field" aria-hidden="true" />
+      <div className="bg-field" aria-hidden="true">
+        <span className="bg-orb bg-orb-a" />
+        <span className="bg-orb bg-orb-b" />
+        <span className="bg-orb bg-orb-c" />
+      </div>
       <CustomCursor />
       <div className="relative z-10">
         <Nav />

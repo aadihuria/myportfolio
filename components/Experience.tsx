@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import CompanyLogo from "./CompanyLogo";
 
 function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null);
@@ -21,6 +22,7 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const experiences = [
   {
     company: "Amazon",
+    domain: "amazon.com",
     role: "Software Development Engineer Intern – Amazon Ads",
     dates: "Jun – Aug 2026",
     location: "Seattle, WA",
@@ -33,6 +35,7 @@ const experiences = [
   },
   {
     company: "SafeBeat Rx",
+    domain: "safebeatrx.com",
     role: "Data & Machine Learning Engineer Intern",
     dates: "May – Aug 2025",
     location: "Remote",
@@ -44,6 +47,7 @@ const experiences = [
   },
   {
     company: "PwC",
+    domain: "pwc.com",
     role: "Consulting Extern – Nonprofit client seeking growth",
     dates: "Jun – Aug 2025",
     location: "Remote",
@@ -54,6 +58,7 @@ const experiences = [
   },
   {
     company: "Enactus Consulting Club, University of Michigan",
+    domain: "enactus.org",
     role: "Data & Technology Lead – Restaurant client seeking profit improvement",
     dates: "Jan 2025 – Present",
     location: "Ann Arbor, MI",
@@ -76,47 +81,45 @@ export default function Experience() {
           </div>
         </FadeUp>
 
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="timeline-line absolute left-0 top-2 bottom-2 w-px hidden md:block" />
+        <div className="space-y-6">
+          {experiences.map((exp, i) => (
+            <FadeUp key={exp.company} delay={i * 0.1}>
+              <div className="card rounded-xl p-6">
+                <div className="flex gap-4">
+                  <CompanyLogo name={exp.company} domain={exp.domain} />
 
-          <div className="space-y-10 md:pl-10">
-            {experiences.map((exp, i) => (
-              <FadeUp key={exp.company} delay={i * 0.1}>
-                <div className="relative card rounded-xl p-6 group">
-                  {/* Timeline dot */}
-                  <div className="absolute -left-[41px] top-7 w-3 h-3 rounded-full bg-[#F3F5F9] border-2 border-[#2C5AA0] hidden md:block" />
-
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
-                    <div>
-                      <div className="flex items-center gap-3 flex-wrap">
-                        <h3 className="font-[family-name:var(--font-fraunces)] text-lg font-medium text-[#1B2130]">{exp.company}</h3>
-                        {exp.tag && (
-                          <span className="pill">
-                            {exp.tag}
-                          </span>
-                        )}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                      <div>
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <h3 className="font-[family-name:var(--font-fraunces)] text-lg font-medium text-[#1B2130]">{exp.company}</h3>
+                          {exp.tag && (
+                            <span className="pill">
+                              {exp.tag}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-[#2C5AA0] text-sm mt-0.5">{exp.role}</p>
                       </div>
-                      <p className="text-[#2C5AA0] text-sm mt-0.5">{exp.role}</p>
+                      <div className="text-right shrink-0">
+                        <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">{exp.dates}</p>
+                        <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">{exp.location}</p>
+                      </div>
                     </div>
-                    <div className="text-right shrink-0">
-                      <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">{exp.dates}</p>
-                      <p className="text-[#8993A6] text-xs font-[family-name:var(--font-plex-mono)]">{exp.location}</p>
-                    </div>
-                  </div>
 
-                  <ul className="space-y-2">
-                    {exp.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-3 text-[#3A4356] text-sm leading-relaxed">
-                        <span className="text-[#2C5AA0] mt-0 shrink-0">–</span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="space-y-2">
+                      {exp.bullets.map((b, j) => (
+                        <li key={j} className="flex gap-3 text-[#3A4356] text-sm leading-relaxed">
+                          <span className="text-[#2C5AA0] mt-0 shrink-0">–</span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </FadeUp>
-            ))}
-          </div>
+              </div>
+            </FadeUp>
+          ))}
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "About", href: "#about" },
+  { label: "Education", href: "#education" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -35,7 +35,7 @@ export default function Nav() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#F3F5F9]/85 backdrop-blur-sm border-b border-[#E0E5EE]"
+          ? "bg-[#ECF1F8]/85 backdrop-blur-sm border-b border-[#E0E5EE]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -91,7 +91,7 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-[#F3F5F9]/95 backdrop-blur-sm border-b border-[#E0E5EE]"
+            className="md:hidden bg-[#ECF1F8]/95 backdrop-blur-sm border-b border-[#E0E5EE]"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {links.map((link) => (

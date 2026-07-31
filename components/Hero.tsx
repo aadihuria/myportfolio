@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Easing } from "framer-motion";
+import Image from "next/image";
 
 const EASE_OUT: Easing = "easeOut";
 
@@ -14,10 +15,10 @@ const fadeUp = {
 };
 
 const lines = [
-  "I'm a Data Science student at the University of Michigan.",
-  "This summer I'm building retrieval systems as an SDE Intern on Amazon Ads.",
-  "I like full-stack products and ML that solve problems people actually have.",
-  "Outside of code — competitive tennis, and coaching through the nonprofit I founded.",
+  "Junior at the University of Michigan, studying Data Science.",
+  "Right now I'm on the Amazon Ads team in Seattle, working on retrieval systems and internal tooling.",
+  "I've also built a few things on the side — a study spot finder for Ann Arbor, a court tracker for tennis and pickleball, and a portfolio model from a stats class that got a little out of hand.",
+  "Played competitive tennis growing up, which is why I started Serve To Serve Academy.",
 ];
 
 export default function Hero() {
@@ -26,99 +27,118 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-20 w-full">
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.05}
-          className="eyebrow mb-5"
-        >
-          Ann Arbor, MI
-        </motion.p>
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-20 w-full grid md:grid-cols-[1fr_300px] gap-14 items-center">
+        <div>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.05}
+            className="eyebrow mb-5"
+          >
+            Ann Arbor, MI
+          </motion.p>
 
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.15}
-          className="font-[family-name:var(--font-fraunces)] text-5xl sm:text-6xl md:text-7xl font-medium text-[#1B2130] leading-[1.05] tracking-tight mb-10"
-        >
-          Hi, I&apos;m Aadi.
-        </motion.h1>
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.15}
+            className="font-[family-name:var(--font-fraunces)] text-5xl sm:text-6xl font-medium text-[#1B2130] leading-[1.05] tracking-tight mb-10"
+          >
+            Hi, I&apos;m Aadi.
+          </motion.h1>
 
-        <div className="space-y-3 mb-10 max-w-2xl">
-          {lines.map((line, i) => (
-            <motion.p
-              key={line}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0.25 + i * 0.08}
-              className="text-[#545F72] text-lg leading-relaxed"
+          <div className="space-y-3 mb-10 max-w-2xl">
+            {lines.map((line, i) => (
+              <motion.p
+                key={line}
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                custom={0.25 + i * 0.08}
+                className="text-[#545F72] text-lg leading-relaxed"
+              >
+                {line}
+              </motion.p>
+            ))}
+          </div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.65}
+            className="flex flex-wrap gap-4 mb-10"
+          >
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-6 py-3 bg-[#2C5AA0] text-white text-sm font-medium rounded-md tracking-wide hover:bg-[#1F4278] transition-colors duration-200"
             >
-              {line}
-            </motion.p>
-          ))}
+              View my work
+            </a>
+            <a
+              href="mailto:ahuria@umich.edu"
+              className="px-6 py-3 border border-[#C7CFDC] text-[#1B2130] text-sm font-medium rounded-md tracking-wide hover:border-[#2C5AA0] hover:text-[#2C5AA0] transition-colors duration-200"
+            >
+              Get in touch
+            </a>
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.75}
+            className="flex items-center gap-6"
+          >
+            <a
+              href="https://github.com/aadihuria"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
+            >
+              <GithubIcon />
+              <span className="group-hover:underline">GitHub</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/aadih"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
+            >
+              <LinkedinIcon />
+              <span className="group-hover:underline">LinkedIn</span>
+            </a>
+            <a
+              href="mailto:ahuria@umich.edu"
+              className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
+            >
+              <EmailIcon />
+              <span className="group-hover:underline">Email</span>
+            </a>
+          </motion.div>
         </div>
 
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          custom={0.65}
-          className="flex flex-wrap gap-4 mb-10"
+          custom={0.2}
+          className="relative w-full aspect-[3/4] max-w-[300px] mx-auto md:mx-0 rounded-xl overflow-hidden border border-[#E0E5EE] shadow-[0_16px_32px_-20px_rgba(27,33,48,0.3)]"
         >
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="px-6 py-3 bg-[#2C5AA0] text-white text-sm font-medium rounded-md tracking-wide hover:bg-[#1F4278] transition-colors duration-200"
-          >
-            View my work
-          </a>
-          <a
-            href="mailto:ahuria@umich.edu"
-            className="px-6 py-3 border border-[#C7CFDC] text-[#1B2130] text-sm font-medium rounded-md tracking-wide hover:border-[#2C5AA0] hover:text-[#2C5AA0] transition-colors duration-200"
-          >
-            Get in touch
-          </a>
-        </motion.div>
-
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.75}
-          className="flex items-center gap-6"
-        >
-          <a
-            href="https://github.com/aadihuria"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
-          >
-            <GithubIcon />
-            <span className="group-hover:underline">GitHub</span>
-          </a>
-          <a
-            href="https://linkedin.com/in/aadih"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
-          >
-            <LinkedinIcon />
-            <span className="group-hover:underline">LinkedIn</span>
-          </a>
-          <a
-            href="mailto:ahuria@umich.edu"
-            className="flex items-center gap-2 text-[#545F72] hover:text-[#2C5AA0] transition-colors text-sm group"
-          >
-            <EmailIcon />
-            <span className="group-hover:underline">Email</span>
-          </a>
+          <Image
+            src="/profile.jpg"
+            alt="Aadi Huria"
+            fill
+            className="object-cover"
+            sizes="300px"
+            priority
+          />
         </motion.div>
       </div>
 

@@ -29,9 +29,6 @@ function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const VISITED_NAMES = new Set([
   // Asia
   "India",
-  "Nepal",
-  "Pakistan",
-  "United Arab Emirates",
   // Europe
   "Croatia",
   "Czechia",

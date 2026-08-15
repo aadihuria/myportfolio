@@ -48,6 +48,16 @@ const projects = [
     github: "https://github.com/aadihuria",
     demo: null,
   },
+  {
+    name: "Temporal Graph Network for Coordinated Bot Detection",
+    date: "August 2026",
+    stack: ["PyTorch Geometric", "FastAPI", "Docker", "Pandas"],
+    description:
+      "Bot-detection system that flags coordinated fake-account networks by how a group of accounts behaves over time rather than static profile checks, using a temporal graph network with a per-account memory that updates on every connection event. Paired with a separate, fully explainable burst-coordination detector that flags synced-up account clusters from connection timing alone.",
+    why: "Bot operators already know what individual-account checks look for and build accounts that clear every one. Timing patterns across a whole group are much harder to fake, so I built the detector around that instead — and validated it on a real 1M-account dataset after discovering its documented schema didn't match the actual files.",
+    github: "https://github.com/aadihuria/tgn-bot-detection",
+    demo: "https://aadihuria.github.io/tgn-bot-detection/",
+  },
 ];
 
 export default function Projects() {
